@@ -3,7 +3,7 @@
 
 Summary:	The XAR project aims to provide an easily extensible archive format
 Name:		xar
-Version:	1.4
+Version:	1.5
 Release:	%mkrel 1
 License:	BSD
 Group:		Archiving/Compression
