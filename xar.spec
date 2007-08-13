@@ -1,9 +1,10 @@
 %define major 1
 %define libname %mklibname %{name} %{major}
+%define develname %mklibname -d %{name}
 
 Summary:	The XAR project aims to provide an easily extensible archive format
 Name:		xar
-Version:	1.5
+Version:	1.5.1
 Release:	%mkrel 1
 License:	BSD
 Group:		Archiving/Compression
@@ -40,13 +41,15 @@ individual files in the archive, the ability to store checksums for individual
 files in both compressed and uncompressed form, and the ability to query the
 table of content's rich meta-data.
 
-%package -n	%{libname}-devel
+%package -n	%{develname}
 Summary:	Libraries and header files required for xar
 Group:		Development/C
 Requires:	%{libname} = %{version}-%{release}
 Provides:	lib%{name}-devel = %{version}-%{release}
+Provides:	%{name}-devel = %{version}-%{release}
+Obsoletes:	%{libname}-devel
 
-%description -n	%{libname}-devel
+%description -n	%{develname}
 The XAR project aims to provide an easily extensible archive format. Important
 design decisions include an easily extensible XML table of contents for random
 access to archived files, storing the toc at the beginning of the archive to
@@ -96,9 +99,7 @@ rm -rf %{buildroot}
 %files -n %{libname}
 %attr(0755,root,root) %{_libdir}/lib%{name}.so.%{major}
 
-%files -n %{libname}-devel
+%files -n %{develname}
 %dir %{_includedir}/%{name}
 %attr(0644,root,root) %{_includedir}/%{name}/%{name}.h
 %attr(0755,root,root) %{_libdir}/lib*.so
-
-
