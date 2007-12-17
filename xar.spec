@@ -15,7 +15,6 @@ BuildRequires:	libacl-devel
 BuildRequires:	openssl-devel
 BuildRequires:	bzip2-devel
 BuildRequires:	zlib-devel
-BuildRoot:	%{_tmppath}/%{name}-root
 
 %description
 The XAR project aims to provide an easily extensible archive format. Important
