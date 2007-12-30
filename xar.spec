@@ -102,3 +102,5 @@ rm -rf %{buildroot}
 %dir %{_includedir}/%{name}
 %attr(0644,root,root) %{_includedir}/%{name}/%{name}.h
 %attr(0755,root,root) %{_libdir}/lib*.so
+%{_libdir}/*.a
+%{_libdir}/*.la
