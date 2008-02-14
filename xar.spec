@@ -8,6 +8,7 @@ Version:	1.5.2
 Release:	%mkrel 1
 License:	BSD
 Group:		Archiving/Compression
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:		http://xar.googlecode.com/
 Source0:	http://xar.googlecode.com/files/%{name}-%{version}.tar.gz
 BuildRequires:	libxml2-devel >= 2.6.11
