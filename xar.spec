@@ -5,7 +5,7 @@
 Summary:	The XAR project aims to provide an easily extensible archive format
 Name:		xar
 Version:	1.5.2
-Release:	%mkrel 6
+Release:	%mkrel 7
 License:	BSD
 Group:		Archiving/Compression
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
