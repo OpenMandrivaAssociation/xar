@@ -5,7 +5,7 @@
 Summary:	The XAR project aims to provide an easily extensible archive format
 Name:		xar
 Version:	1.5.2
-Release:	7
+Release:	8
 License:	BSD
 Group:		Archiving/Compression
 URL:		http://xar.googlecode.com/
