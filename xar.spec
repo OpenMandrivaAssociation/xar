@@ -5,17 +5,17 @@
 Summary:	The XAR project aims to provide an easily extensible archive format
 Name:		xar
 Version:	1.5.2
-Release:	8.1
+Release:	9
 License:	BSD
 Group:		Archiving/Compression
 URL:		http://xar.googlecode.com/
 Source0:	http://xar.googlecode.com/files/%{name}-%{version}.tar.gz
 Patch0:		xar-1.5.2-respect_ldflags.patch
-BuildRequires:	libxml2-devel >= 2.6.11
+BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	acl-devel
-BuildRequires:	openssl-devel
-BuildRequires:	bzip2-devel
-BuildRequires:	zlib-devel
+BuildRequires:	pkgconfig(libssl)
+BuildRequires:	pkgconfig(bz2)
+BuildRequires:	pkgconfig(zlib)
 
 %description
 The XAR project aims to provide an easily extensible archive format. Important
@@ -27,11 +27,11 @@ individual files in the archive, the ability to store checksums for individual
 files in both compressed and uncompressed form, and the ability to query the
 table of content's rich meta-data.
 
-%package -n	%{libname}
+%package -n %{libname}
 Summary:	Libraries required for xar
 Group:		System/Libraries
 
-%description -n	%{libname}
+%description -n %{libname}
 The XAR project aims to provide an easily extensible archive format. Important
 design decisions include an easily extensible XML table of contents for random
 access to archived files, storing the toc at the beginning of the archive to
@@ -41,7 +41,7 @@ individual files in the archive, the ability to store checksums for individual
 files in both compressed and uncompressed form, and the ability to query the
 table of content's rich meta-data.
 
-%package -n	%{develname}
+%package -n %{develname}
 Summary:	Libraries and header files required for xar
 Group:		Development/C
 Requires:	%{libname} = %{version}-%{release}
@@ -49,7 +49,7 @@ Provides:	lib%{name}-devel = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
 Obsoletes:	%{libname}-devel
 
-%description -n	%{develname}
+%description -n %{develname}
 The XAR project aims to provide an easily extensible archive format. Important
 design decisions include an easily extensible XML table of contents for random
 access to archived files, storing the toc at the beginning of the archive to
@@ -63,19 +63,18 @@ Libraries and header files required for xar.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 # nuke rpath
 perl -pi -e "s|RPATH=.*|RPATH=\"\"|g" configure*
 
 %build
-
 %configure
 
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 # make it able to strip the library and binary
 chmod 755 %{buildroot}%{_libdir}/lib%{name}.so.%{major}
