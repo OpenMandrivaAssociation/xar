@@ -16,6 +16,7 @@ BuildRequires:	acl-devel
 BuildRequires:	pkgconfig(libssl)
 BuildRequires:	pkgconfig(bzip2)
 BuildRequires:	pkgconfig(zlib)
+BuildRequires:	pkgconfig(libxml-2.0)
 
 %description
 The XAR project aims to provide an easily extensible archive format. Important
