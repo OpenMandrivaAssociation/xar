@@ -4,19 +4,17 @@
 
 Summary:	The XAR project aims to provide an easily extensible archive format
 Name:		xar
-Version:	1.5.2
-Release:	9
+Version:	1.6.1
+Release:	1
 License:	BSD
 Group:		Archiving/Compression
-URL:		http://xar.googlecode.com/
-Source0:	http://xar.googlecode.com/files/%{name}-%{version}.tar.gz
-Patch0:		xar-1.5.2-respect_ldflags.patch
+URL:		https://mackyle.github.io/xar/
+Source0:	https://github.com/downloads/mackyle/xar/%{name}-%{version}.tar.gz
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	acl-devel
 BuildRequires:	pkgconfig(libssl)
 BuildRequires:	pkgconfig(bzip2)
 BuildRequires:	pkgconfig(zlib)
-BuildRequires:	pkgconfig(libxml-2.0)
 
 %description
 The XAR project aims to provide an easily extensible archive format. Important
