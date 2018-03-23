@@ -14,7 +14,7 @@ Patch0:		xar-1.5.2-respect_ldflags.patch
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	acl-devel
 BuildRequires:	pkgconfig(libssl)
-BuildRequires:	pkgconfig(bz2)
+BuildRequires:	pkgconfig(bzip2)
 BuildRequires:	pkgconfig(zlib)
 
 %description
