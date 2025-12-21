@@ -19,6 +19,11 @@ Patch3:         xar-1.8-openssl-1.1.patch
 Patch4:         xar-1.8-Add-OpenSSL-To-Configuration.patch
 	
  
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	acl-devel
 BuildRequires:	pkgconfig(libssl)
