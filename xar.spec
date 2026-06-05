@@ -7,7 +7,7 @@
 Summary:	The XAR project aims to provide an easily extensible archive format
 Name:		xar
 Version:	498
-Release:	1
+Release:	2
 License:	BSD
 Group:		Archiving/Compression
 URL:		https://mackyle.github.io/xar/
