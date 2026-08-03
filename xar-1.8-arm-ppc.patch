@@ -1,6 +1,6 @@
 --- a/lib/archive.c
 +++ b/lib/archive.c
-@@ -387,7 +387,8 @@
+@@ -400,7 +400,8 @@
  			return NULL;
  		}
          
@@ -11,8 +11,8 @@
  			xar_close(ret);
  			return NULL;
 --- a/src/xar.c
-+++ a/src/xar.c
-@@ -783,7 +783,7 @@
++++ b/src/xar.c
+@@ -883,7 +883,7 @@
  int main(int argc, char *argv[]) {
  	int ret;
  	char *filename = NULL;

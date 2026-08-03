@@ -6,8 +6,8 @@
 
 Summary:	The XAR project aims to provide an easily extensible archive format
 Name:		xar
-Version:	498
-Release:	2
+Version:	503
+Release:	1
 License:	BSD
 Group:		Archiving/Compression
 URL:		https://mackyle.github.io/xar/
@@ -75,24 +75,19 @@ table of content's rich meta-data.
 Libraries and header files required for xar.
 
 %prep
-%setup -q -n xar-%{subversion}
+%setup -q -n xar-xar-%{subversion}
 pushd xar
-	
-%patch0 -p1
-	
-%patch1 -p1
-	
-%patch2 -p1
-	
-%patch3 -p1
-	
-%patch4 -p1
+
+%patch -P0 -p1
+%patch -P1 -p1
+%patch -P2 -p1
+%patch -P3 -p1
+%patch -P4 -p1
+
 sed 's:-Wl,-rpath,::g' -i configure.ac #No rpath
-	
 sed 's:filetree.h:../lib/filetree.h:g' -i src/xar.c #Fix path
-	
 sed 's:util.h:../lib/util.h:g' -i src/xar.c #Fix path
-	
+
 popd
 # nuke rpath
 perl -pi -e "s|RPATH=.*|RPATH=\"\"|g" configure*
