@@ -10,7 +10,7 @@
 Summary:	The XAR project aims to provide an easily extensible archive format
 Name:		xar
 Version:	503
-Release:	1
+Release:	2
 License:	BSD
 Group:		Archiving/Compression
 URL:		https://mackyle.github.io/xar/
@@ -98,7 +98,9 @@ perl -pi -e "s|RPATH=.*|RPATH=\"\"|g" configure*
 %build
 pushd xar
 	
-env NOCONFIGURE=1 ./autogen.sh
+# autogen.sh runs configure unless told not to. That configure has no
+# --build, and the bundled config.guess does not know aarch64.
+./autogen.sh --noconfigure
 
 %configure
 
