@@ -75,7 +75,7 @@ table of content's rich meta-data.
 Libraries and header files required for xar.
 
 %prep
-%setup -q -n xar-xar-%{subversion}
+%setup -q -n xar-%{subversion}
 pushd xar
 
 %patch -P0 -p1
