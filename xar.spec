@@ -1,5 +1,8 @@
 %define subversion 417.1
 
+# K&R definitions such as strmode(mode, p) are invalid in C23.
+%global optflags %{optflags} -std=gnu17
+
 %define major 1
 %define libname %mklibname %{name} %{major}
 %define develname %mklibname -d %{name}
